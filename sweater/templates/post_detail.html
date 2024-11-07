@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ note.title }}
+{% endblock %}
+
+{% block bodytext %}
+<div class="container mt-5">
+    <h1>{{ note.title }}</h1>
+
+    <div class="alert alert-info">
+        <h2>{{ note.text_uno }}</h2>
+        <p>{{ note.text_dos }}</p>
+        <p><b>Дата: {{ note.date.date() }}</b>></p>
+        <a href="/posts/{{ note.id }}/update" class="btn btn-success">Редактировать</a>
+        <a href="/posts/{{ note.id }}/delete" class="btn btn-danger">Удалить</a>
+    </div>
+</div>
+{% endblock %}
